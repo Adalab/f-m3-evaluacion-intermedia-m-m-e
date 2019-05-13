@@ -1,0 +1,26 @@
+.list__item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: lightgray;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+}
+.card-image {
+
+}
+.card-name {
+  text-transform: capitalize;
+}
+.types__list {
+  display: flex;
+  padding: 0;
+}
+.types__list-item {
+  list-style: none;
+  padding: 5px;
+}
+
+.type {
+
+}

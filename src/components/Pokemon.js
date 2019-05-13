@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './pokemon.css';
 
 class Pokemon extends React.Component {
   render() {
@@ -8,9 +9,9 @@ class Pokemon extends React.Component {
       <div className="list__item-card">
         <img src={url} alt={name} className="card-image"/>
         <h2 className="card-name">{name}</h2>
-        <ul className="types__list-item">
+        <ul className="types__list">
           {types.map((type, index) => {
-            return <li className="types__list-item" key={index}>{type}</li>
+            return <li className="types__list-item" key={index}><span className="type">{type}</span></li>
           })}
         </ul>
       </div>
