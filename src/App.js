@@ -22,7 +22,13 @@ function App() {
         {pokemon.map(item => {
           return <li className="list__item">
             <div className="list__item-card">
-            {item.name}
+              <img src={item.url} alt={item.name} className="card-image"/>
+              <h2 className="card-name">{item.name}</h2>
+              <ul className="types__list-item">
+                {item.types.map(item => {
+                  return <li className="types__list-item">{item}</li>
+                })}
+              </ul>
             </div>
           </li>
         })}
