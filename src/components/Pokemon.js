@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 class Pokemon extends React.Component {
   render() {
-    const {pokemon} = this.props;
+    const { url, name, types } = this.props;
     return (
       <div className="list__item-card">
-        <img src={pokemon.url} alt={pokemon.name} className="card-image"/>
-        <h2 className="card-name">{pokemon.name}</h2>
+        <img src={url} alt={name} className="card-image"/>
+        <h2 className="card-name">{name}</h2>
         <ul className="types__list-item">
-          {pokemon.types.map((pokemon, index) => {
-            return <li className="types__list-item" key={index}>{pokemon}</li>
+          {types.map((type, index) => {
+            return <li className="types__list-item" key={index}>{type}</li>
           })}
         </ul>
       </div>
@@ -19,7 +19,9 @@ class Pokemon extends React.Component {
 }
 
 Pokemon.propTypes = {
-  pokemon: PropTypes.object,
+  url: PropTypes.string,
+  name: PropTypes.string,
+  types: PropTypes.array,
 }
 
 export default Pokemon;
