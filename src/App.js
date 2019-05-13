@@ -30,8 +30,9 @@ class App extends React.Component {
   }
   
   printName(event) {
-    const thisPokemonName = event.currentTarget.innerHTML;
-    this.setState({name: thisPokemonName});
+    const thisPokemonName = event.currentTarget.id;
+    const capitalisedName = thisPokemonName.charAt(0).toUpperCase() + thisPokemonName.slice(1);
+    this.setState({name: capitalisedName});
   }
 
   render() {
