@@ -16,11 +16,30 @@ const pokemon = [
 ];
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: '',
+    }
+    this.printName = this.printName.bind(this);
+  }
+  printId(event) {
+    const thisPokemonId = event.currentTarget.id;
+    console.log('Poke ID:', thisPokemonId);
+  }
+  
+  printName(event) {
+    const thisPokemonName = event.currentTarget.innerHTML;
+    this.setState({name: thisPokemonName});
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="title">Mi lista de Pokemon</h1>
-        <PokeList pokemon={pokemon}/>
+        <PokeList pokemon={pokemon} printId={this.printId} printName={this.printName}/>
+        <p className="results">You have chosen {this.state.name}</p>
       </div>
     );
   }

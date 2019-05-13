@@ -5,12 +5,12 @@ import './pokelist.css';
 
 class PokeList extends React.Component {
   render() {
-    const {pokemon} = this.props;
+    const {pokemon, printId, printName} = this.props;
     return (
       <ul className="list">
         {pokemon.map(item => {
-          return <li className="list__item" key={item.id}>
-            <Pokemon url={item.url} name={item.name} types={item.types}/>
+          return <li className="list__item" id={item.id} key={item.id} onClick={printId}>
+            <Pokemon url={item.url} name={item.name} types={item.types} printName={printName}/>
           </li>
         })}
       </ul>
