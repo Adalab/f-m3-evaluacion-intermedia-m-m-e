@@ -15,13 +15,15 @@ const pokemon = [
   {"id":10,"name":"caterpie","types":["bug"],"evolution":null,"url":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png"}
 ];
 
-function App() {
-  return (
-    <div className="App">
-      <h1 className="title">Mi lista de Pokemon</h1>
-      <PokeList pokemon={pokemon}/>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <h1 className="title">Mi lista de Pokemon</h1>
+        <PokeList pokemon={pokemon}/>
+      </div>
+    );
+  }
 }
 
 export default App;
