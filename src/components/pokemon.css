@@ -6,21 +6,30 @@
   border: 1px solid darkslategray;
   border-radius: 5px;
 }
-.card-image {
 
-}
 .card-name {
   text-transform: capitalize;
+  border-top: 1px solid darkslategray;
+  border-bottom: 1px solid darkslategray;
+  width: 100%;
+  text-align: center;
 }
+
 .types__list {
   display: flex;
   padding: 0;
 }
+
 .types__list-item {
   list-style: none;
   padding: 5px;
 }
 
 .type {
-
+  background-color: lightseagreen;
+  color: white;
+  display: inline-block;
+  height: 20px;
+  padding: 3px;
+  border-radius: 5px;
 }
