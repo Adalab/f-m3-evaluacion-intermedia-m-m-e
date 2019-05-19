@@ -4,9 +4,9 @@ import './pokemon.css';
 
 class Pokemon extends React.Component {
   render() {
-    const { url, name, types, printName } = this.props;
+    const { url, name, types, printName, addToFavorites } = this.props;
     return (
-      <div className="list__item-card" id={name} onClick={printName}>
+      <div className="list__item-card" id={name} onClick={addToFavorites}>
         <img src={url} alt={name} className="card-image"/>
         <h2 className="card-name">{name}</h2>
         <ul className="types__list">
@@ -14,6 +14,7 @@ class Pokemon extends React.Component {
             return <li className="types__list-item" key={index}><span className="type">{type}</span></li>
           })}
         </ul>
+        <p className="fave" >Favourite!</p>
       </div>
     );
   }
