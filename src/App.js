@@ -12,21 +12,21 @@ class App extends React.Component {
       pokemonData: pokemon,
       favorites: []
     }
-    this.printName = this.printName.bind(this);
-    this.addToFavorites = this.addToFavorites.bind(this);
+    // this.printName = this.printName.bind(this);
+    this.handleFavorites = this.handleFavorites.bind(this);
   }
   printId(event) {
     const thisPokemonId = event.currentTarget.id;
     console.log('Poke ID:', thisPokemonId);
   }
   
-  printName(event) {
-    const thisPokemonName = event.currentTarget.id;
-    const capitalisedName = thisPokemonName.charAt(0).toUpperCase() + thisPokemonName.slice(1);
-    this.setState({name: capitalisedName});
-  }
+  // printName(event) {
+  //   const thisPokemonName = event.currentTarget.id;
+  //   const capitalisedName = thisPokemonName.charAt(0).toUpperCase() + thisPokemonName.slice(1);
+  //   this.setState({name: capitalisedName});
+  // }
 
-  addToFavorites(event) {
+  handleFavorites(event) {
     const name = event.currentTarget.id;
     if (this.state.favorites.indexOf(name) < 0) {
       this.setState(prevState => {
@@ -37,7 +37,7 @@ class App extends React.Component {
       })
     } else {
       this.setState(prevState => {
-        const newFavorites = [...prevState.favorites]
+        const newFavorites = [...prevState.favorites.filter(item => item.id !== name)]
         newFavorites.splice(name, 1);
         return(
           {favorites: newFavorites}
@@ -48,7 +48,7 @@ class App extends React.Component {
 
   render() {
     const {pokemonData, name} = this.state;
-    const {printId, printName, addToFavorites} = this;
+    const {printId, printName, handleFavorites} = this;
     return (
       <div className="App">
         <h1 className="title">Mi lista de Pokemon</h1>
@@ -56,7 +56,7 @@ class App extends React.Component {
           pokemon={pokemonData} 
           printId={printId} 
           printName={printName} 
-          addToFavorites={addToFavorites}
+          handleFavorites={handleFavorites}
         />
         <p className="results">
           {this.state.name !== '' ? `${name}, I choose you!` : ''}
