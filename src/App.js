@@ -37,8 +37,10 @@ class App extends React.Component {
       })
     } else {
       this.setState(prevState => {
-        const newFavorites = [...prevState.favorites.filter(item => item.id !== name)]
-        newFavorites.splice(name, 1);
+        const item = this.state.favorites.indexOf(name);
+        const newFavorites = [...prevState.favorites];
+        // const newFavorites = [...prevState.favorites.filter(item => item.id !== name)]
+        newFavorites.splice(item, 1);
         return(
           {favorites: newFavorites}
         )
