@@ -5,7 +5,7 @@ import './pokelist.css';
 
 class PokeList extends React.Component {
   render() {
-    const {pokemon, printId, printName, handleFavorites} = this.props;
+    const {pokemon, printId, printName, handleFavorites, favorites} = this.props;
     return (
       <ul className="list">
         {pokemon.map(item => {
@@ -17,6 +17,7 @@ class PokeList extends React.Component {
                 types={item.types} 
                 printName={printName} 
                 handleFavorites={handleFavorites}
+                favorites={favorites}
               />
             </li>
           )

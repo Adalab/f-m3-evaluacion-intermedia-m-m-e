@@ -8,29 +8,23 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      name: '',
       pokemonData: pokemon,
       favorites: []
     }
-    // this.printName = this.printName.bind(this);
     this.handleFavorites = this.handleFavorites.bind(this);
   }
   printId(event) {
     const thisPokemonId = event.currentTarget.id;
     console.log('Poke ID:', thisPokemonId);
   }
-  
-  // printName(event) {
-  //   const thisPokemonName = event.currentTarget.id;
-  //   const capitalisedName = thisPokemonName.charAt(0).toUpperCase() + thisPokemonName.slice(1);
-  //   this.setState({name: capitalisedName});
-  // }
 
   handleFavorites(event) {
-    const name = event.currentTarget.id;
+    const target = event.currentTarget;
+    const name = target.id;
     if (this.state.favorites.indexOf(name) < 0) {
       this.setState(prevState => {
         const newFavorites = [...prevState.favorites, name]
+        console.log(newFavorites);
         return(
           {favorites: newFavorites}
         )
@@ -39,8 +33,8 @@ class App extends React.Component {
       this.setState(prevState => {
         const item = this.state.favorites.indexOf(name);
         const newFavorites = [...prevState.favorites];
-        // const newFavorites = [...prevState.favorites.filter(item => item.id !== name)]
         newFavorites.splice(item, 1);
+        console.log(newFavorites);
         return(
           {favorites: newFavorites}
         )
@@ -49,7 +43,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {pokemonData, name} = this.state;
+    const {pokemonData, favorites} = this.state;
     const {printId, printName, handleFavorites} = this;
     return (
       <div className="App">
@@ -59,10 +53,8 @@ class App extends React.Component {
           printId={printId} 
           printName={printName} 
           handleFavorites={handleFavorites}
+          favorites={favorites}
         />
-        <p className="results">
-          {this.state.name !== '' ? `${name}, I choose you!` : ''}
-        </p>
       </div>
     );
   }
