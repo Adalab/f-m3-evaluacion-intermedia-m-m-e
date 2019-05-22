@@ -11,7 +11,7 @@ class Pokemon extends React.Component {
         <h2 className="card-name">{name}</h2>
         <ul className="types__list">
           {types.map((type, index) => {
-            return <li className="types__list-item" key={index}><span className="type">{type}</span></li>
+            return <li className="types__list-item" key={index}><span className={`type ${type}`}>{type}</span></li>
           })}
         </ul>
         <i className={favorites.includes(name) > 0 ? 'fave fas fa-heart' : 'far fa-heart'}></i>

@@ -50,3 +50,28 @@
 .fave {
   background: yellow;
 }
+
+.poison {
+  background-color: purple;
+}
+
+.grass {
+  background-color: rgb(34, 230, 34);
+}
+
+.fire {
+  background-color: rgb(211, 61, 2);
+}
+
+.water {
+  background-color: lightseagreen;
+}
+
+.flying {
+  background-color: white;
+  color: lightskyblue;
+}
+
+.bug {
+  background-color: darkgreen;
+}
