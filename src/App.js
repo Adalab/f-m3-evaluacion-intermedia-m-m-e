@@ -24,7 +24,6 @@ class App extends React.Component {
     if (this.state.favorites.indexOf(name) < 0) {
       this.setState(prevState => {
         const newFavorites = [...prevState.favorites, name]
-        console.log(newFavorites);
         return(
           {favorites: newFavorites}
         )
@@ -34,7 +33,6 @@ class App extends React.Component {
         const item = this.state.favorites.indexOf(name);
         const newFavorites = [...prevState.favorites];
         newFavorites.splice(item, 1);
-        console.log(newFavorites);
         return(
           {favorites: newFavorites}
         )
