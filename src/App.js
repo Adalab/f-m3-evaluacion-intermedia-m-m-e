@@ -55,6 +55,7 @@ class App extends React.Component {
           handleFavorites={handleFavorites}
           favorites={favorites}
         />
+        <div className="faves">Número de favoritos: {favorites.length}</div>
       </div>
     );
   }
